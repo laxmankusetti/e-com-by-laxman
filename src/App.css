@@ -1,38 +1,194 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap');
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'League Spartan', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-color: hsl(180, 52%, 96%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.job{
+  width: 75%;
+  height: 100px;
+  padding: 25px 50px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: hsl(180, 52%, 100%);
+  margin: auto;
+  margin-top: 20px;
+  box-shadow: 0 0 10px hsl(180, 51%, 86%);
+}
+
+.logo-company-details{
+  display: flex;
+  gap: 20px;
+}
+
+.logo-company-details #logo{
+  width: 70px;
+  height: 70px;
+}
+
+.company{
+  width: max-content;
+  position: relative;
+}
+
+.company .new-feature{
+  position: absolute;
+  left: 110%;
+  top: 2px;
+}
+
+.company .new-feature span.new{
+  background-color: hsl(180, 29%, 50%);
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  padding: 3px;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.company .new-feature span.featured{
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  padding: 3px;
+  border-radius: 20px;
+}
+
+.tags span{
+  padding: 5px;
+  background-color: hsla(180, 29%, 50%, 0.3);
+  color: hsl(180, 29%, 50%);
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.tags span:hover{
+  background-color: hsl(180, 29%, 50%);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.tags span.tag.active{
+  background-color: hsl(180, 29%, 50%);
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.job-details h3{
+  color: hsl(180, 29%, 50%);
+}
+.job-details h2:hover{
+  color: hsl(180, 29%, 50%);
+}
+
+.job-details h2{
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.job-details p{
+ color: hsl(180, 8%, 52%);
+}
+
+.filters span{
+  padding: 10px;
+  border-radius: 10px;
+  background-color: hsl(180, 29%, 50%);
+  color: white;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.filters span:hover{
+  background-color: hsla(180, 29%, 50%, 0.2);
+  color: hsl(180, 29%, 50%);
+}
+
+.filters{
+  width: 100%;
+  padding: 20px;
+}
+
+.filters p{
+  font-size: 0.9em;
+  color: hsl(180, 29%, 50%);
+  margin: 15px 0;
+}
+
+.filters span.filter.active{
+  background-color: hsla(180, 29%, 50%, 0.2);
+  color: hsl(180, 29%, 50%);
+}
+
+.selected-filters-list{
+  width: 90%;
+  margin: 15px auto;
+  background: hsl(180, 29%, 50%);
+  border-radius: 10px;
+  padding: 25px 50px;
+  text-align: center;
+}
+
+.selected-filters-list span{
+  background-color: white;
+  color: hsl(180, 29%, 50%);
+  padding: 5px;
+  font-size: 0.8em;
+  border-radius: 5px;
+  margin: 20px 0;
+  margin-left: 15px;
+}
+
+.selected-filters-list h3{
+  color: white;
+  font-size: 2em;
+}
+.selected-filters-list p{
+  color: hsl(180, 51%, 86%);
+  animation: blinked_para 2s ease-in-out 0.5s infinite;
+  margin: 10px 0;
+}
+
+@keyframes blinked_para {
+  from{
+    color: hsl(180, 52%, 100%);
   }
-  to {
-    transform: rotate(360deg);
+  to{
+    color: rgb(239, 19, 52);
+  }
+}
+
+@media screen and (max-width: 500px){
+  .filters{
+    display: none;
+  }
+
+  .job{
+    width: 95%;
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+    font-size: 1em;
+  }
+
+  .logo-company-details{
+    width: 100%;
+    display: flex;
+  }
+  
+  .logo-company-details #logo{
+    width: 50px;
+    height: 50px;
   }
 }
